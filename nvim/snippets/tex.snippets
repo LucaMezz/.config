@@ -315,7 +315,7 @@ snippet example "Example" bi
 		${0:${VISUAL}}
 	\end{example}
 
-
-
-
-
+snippet greet "Greeting with Lua" b
+    print("Generating greeting...")
+    local name = "${1:World}"
+    return "Hello, " .. name .. "!"
