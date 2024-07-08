@@ -1,5 +1,21 @@
 # -- SNIPPETS --
 #
+
+snippet N "Natural Numbers" Ai
+	\mathbb{N}
+
+snippet Z "Integers" Ai
+	\mathbb{Z}
+
+snippet R "Real Numbers" Ai
+	\mathbb{R}
+
+snippet Q "Rational Numbers" Ai
+	\mathbb{Q}
+
+snippet C "Complex Numbers" Ai
+	\mathbb{C}
+
 # new glossary entry
 snippet gloss "Glossary Entry"  b
 	\newglossaryentry{${1:entry}}{
@@ -315,7 +331,116 @@ snippet example "Example" bi
 		${0:${VISUAL}}
 	\end{example}
 
-snippet greet "Greeting with Lua" b
-    print("Generating greeting...")
-    local name = "${1:World}"
-    return "Hello, " .. name .. "!"
+snippet boxed "Box" bi
+	\boxed{${1}}${0}
+
+snippet => "Implies" Ai
+	\implies
+
+snippet -> "Right Arrow" Ai
+	\rightarrow
+
+snippet && "And" Ai
+	\land
+
+snippet || "Or" Ai
+	\lor
+
+snippet ! "Not" Ai
+	\lnot
+
+snippet fa "For All" Ai
+	\forall
+
+snippet te "There Exists" Ai
+	\exists
+
+snippet mk "Maths" wA
+	$${1}$${2}
+
+snippet dm "Maths" wA
+	\[
+		${1:${VISUAL}}
+	\] $0
+
+snippet // "Fraction" iA
+	\\frac{$1}{$2} $0
+
+snippet / "Fraction" i
+	\\frac{${VISUAL}}{$1} $0
+
+snippet pmat "Parenthesis Matrix" iA
+	\begin{pmatrix} $1 \end{pmatrix} $0
+
+snippet bmat "Bracket Matrix" iA
+	\begin{bmatrix} $1 \end{bmatrix} $0
+
+snippet () "left( right)" iA
+	\left( ${1:${VISUAL}} \right) $0
+
+snippet lr "left( right)" i
+	\left( ${1:${VISUAL}} \right) $0
+
+snippet lr( "left( right)" i
+	\left( ${1:${VISUAL}} \right) $0
+
+snippet lr| "left| right|" i
+	\left| ${1:${VISUAL}} \right| $0
+
+snippet lr{ "left\{ right\}" i
+	\left\\{ ${1:${VISUAL}} \right\\} $0
+
+snippet lrb "left\{ right\}" i
+	\left\\{ ${1:${VISUAL}} \right\\} $0
+
+snippet lr[ "left[ right]" i
+	\left[ ${1:${VISUAL}} \right] $0
+
+snippet lra "leftangle rightangle" iA
+	\left<${1:${VISUAL}} \right>$0
+
+
+snippet sum "sum" w
+	\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+
+snippet taylor "taylor" w
+	\sum_{${1:k}=${2:0}}^{${3:\infty}} ${4:c_$1} (x-a)^$1 $0
+
+snippet lim "limit" w
+	\lim_{${1:n} \to ${2:\infty}} 
+
+snippet limsup "limsup" w
+	\limsup_{${1:n} \to ${2:\infty}} 
+
+snippet prod "product" w
+	\prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
+
+snippet part "d/dx" w
+	\frac{\partial ${1:V}}{\partial ${2:x}} $0
+
+snippet sq "\sqrt{}" iA
+	\sqrt{${1:${VISUAL}}} $0
+
+snippet sr "^2" iA
+	^2
+
+snippet cb "^3" iA
+	^3
+
+snippet dot "Dot" iA
+	\cdot 
+
+snippet ... "Ellipse" iA
+	\ldots
+
+snippet choose "Combinations"
+	\begin{pmatrix} $1 \\\\ $2 \end{pmatrix} $0
+
+snippet lint "Line Integral"
+	\oint_{${1:C}} $2 d ${3:r} $0
+
+snippet sint "Surface Integral"
+	\oiint_{${1:S}} $2 d ${3:S} $0
+
+snippet vec "Vector"
+	\vec{$1} $0
