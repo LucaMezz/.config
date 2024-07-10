@@ -7,13 +7,13 @@ return {
   },
   config = function()
     -- import lspconfig plugin
-    local lspconfig = require("lspconfig")
+    -- local lspconfig = require("lspconfig")
 
     -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    -- local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
     -- used to enable autocompletion (assign to every lsp server config)
-    local default = cmp_nvim_lsp.default_capabilities()
+    --local default = cmp_nvim_lsp.default_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     local signs = { Error = "", Warn = "", Hint = "󰠠", Info = "" }
@@ -39,29 +39,29 @@ return {
     -- })
 
     -- configure python server
-    lspconfig["pyright"].setup({
-      capabilities = default,
-    })
+    --lspconfig["pyright"].setup({
+    --  capabilities = default,
+    --})
 
     -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
-      capabilities = default,
-      settings = {
-                   -- custom settings for lua
-        Lua = {
-          -- make the language server recognize "vim" global
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            -- make language server aware of runtime files
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
-            },
-          },
-        },
-      },
-    })
+    --lspconfig["lua_ls"].setup({
+    --  capabilities = default,
+    --  settings = {
+    --               -- custom settings for lua
+    --    Lua = {
+    --      -- make the language server recognize "vim" global
+    --      diagnostics = {
+    --        globals = { "vim" },
+    --     },
+    --      workspace = {
+    --        -- make language server aware of runtime files
+    --        library = {
+    --         [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+    --          [vim.fn.stdpath("config") .. "/lua"] = true,
+    --        },
+    --      },
+    --    },
+    --  },
+    --})
   end,
 }

@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}			% Use this package to include images
+\usepackage{amsmath}			% A library of many standard math expressions
+\usepackage{amssymb}
+\usepackage{amsfonts} % mathbb, etc.
+\usepackage{esint} % closed integrals
+\usepackage[margin=1in]{geometry}% Sets 1in margins. 
+\usepackage{fancyhdr}			% Creates headers and footers
+\usepackage{enumerate}          %These two package give custom labels to a list
+\usepackage[shortlabels]{enumitem}
+\usepackage{framed} % or, "mdframed"
+\usepackage[framed]{ntheorem}
+
+% Creates the header and footer. You can adjust the look and feel of these here.
+\pagestyle{fancy}
+\fancyhead[l]{Luca Mezzavilla}
+\fancyhead[c]{MTH2010 Lecture \#1}
+\fancyhead[r]{\today}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt} %Creates a horizontal line underneath the header
+\setlength{\headheight}{15pt} %Sets enough space for the header
+
+\newframedtheorem{theorem}{Theorem}
+\newframedtheorem{lemma}{Lemma}
+\newframedtheorem{corollary}{Corollary}
+\newframedtheorem{proposition}{Proposition}
+\newframedtheorem{definition}{Definition}
+\newframedtheorem{problem}{Problem}
+\newframedtheorem{example}{Example}
+
+\begin{document} %The writing for your homework should all come after this. 
+
+\noindent You can modify the code in this template to make your first homework in LaTeX. You can put any \textit{initial text} in this section. 
+
+
+%Enumerate starts a list of problems so you can put each homework problem after each item. 
+\begin{enumerate}[start=1,label={\bfseries Question \arabic*:},leftmargin=1in] %You can change "Problem" to be whatever label you like. 
+    \item This problem contains an equation in display mode. The definition of the Riemann Integral is 
+
+    \[ \int_a^bf(x)dx=\lim_{||P||\rightarrow 0}\sum_{k=1}^nf(x_k^*)\Delta x_k\]
+
+    Alternatively you can use $f(x)$ to write an equation in the middle of a sentence. 
+    
+    \item This is a problem that contains a table. I can reference Table \ref{tab:my_label} here. 
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|} \hline 
+         Column 1& Column 2\\ \hline \hline 
+         1& 2\\ \hline 
+         3& 4\\ \hline
+    \end{tabular}
+    \caption{This is a caption}
+    \label{tab:my_label}
+\end{table}
+  
+     \item This is a problem about matrices. 
+
+       \[ \begin{bmatrix}
+        0 && 1\\
+        1 && 0
+    \end{bmatrix}\]
+
+     \item This problem contains aligned equations. For $f(x)=x^2$,
+
+     \begin{align*}
+         f'(x)&=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
+         &= \lim_{h\to 0}\frac{(x+h)^2-x^2}{h}\\
+         &= \lim_{h\to 0}\frac{2xh+h^2}{h}\\
+         &= \lim_{h\to 0}2x+h\\
+         &=2x
+     \end{align*}
+     
+
+\newpage  %This creates a newpage
+
+     
+\item This \textbf{question} has \textit{multiple} parts
+\begin{enumerate}
+    \item This is part a
+    \item This is part b
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{theorem}[Cayley-Hamilton Theorem]
+  All square matrices satisfy their own characteristic polynomial.
+\end{theorem}
+
+\begin{corollary}[Example]
+  A corollary
+\end{corollary}
+
+\begin{definition}[Orthonormal]
+  Unit vectors which are linearly independent
+\end{definition}
+
+\[
+  \oiint_S \vec{F} \cdot d\vec{S} = \iiint_V \nabla \cdot \vec{F} d\vec{V}
+\]
+
+\[
+             
+\]
+
+\end{document}
