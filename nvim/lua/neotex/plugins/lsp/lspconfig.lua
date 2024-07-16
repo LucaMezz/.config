@@ -44,21 +44,32 @@ return {
     --})
 
     lspconfig.clangd.setup {
-    cmd = { "clangd" },
-    filetypes = { "c", "cpp", "objc", "objcpp" },
-    root_dir = function(fname)
-      return lspconfig.util.find_git_ancestor(fname) or lspconfig.util.path.dirname(fname)
-    end,
-    -- You can add other options here
-    settings = {
-      clangd = {
-        -- Example: enable or disable clang-tidy
-        clang_tidy = {
-          enable = true,
+      cmd = { "clangd" },
+      filetypes = { "c", "cpp", "objc", "objcpp" },
+      root_dir = function(fname)
+        return lspconfig.util.find_git_ancestor(fname) or lspconfig.util.path.dirname(fname)
+        end,
+      -- You can add other options here
+      settings = {
+        clangd = {
+          -- Example: enable or disable clang-tidy
+          clang_tidy = {
+            enable = true,
+          },
         },
       },
-    },
-  }
+    }
+
+    lspconfig.hls.setup {
+      cmd = { "haskell-language-server-wrapper", "--lsp" },
+      filetypes = { "haskell", "lhaskell" },
+      root_dir = lspconfig.util.root_pattern("*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"),
+      settings = {
+        haskell = {
+          formattingProvider = "ormolu",
+        },
+      },
+    }
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
