@@ -292,14 +292,14 @@ snippet rule "Rule" bi
 	}
 
 snippet lemma "Lemma" bi
-	\begin{Lthm} \label{lemma:${1:label}}
+	\begin{lemma} \label{lemma:${1:label}}
 		${0:${VISUAL}}
-	\end{Lthm}
+	\end{lemma}
 
 snippet prop "Proposition" bi
-	\begin{Pthm} \label{${1:label}}
+	\begin{proposition} \label{${1:label}}
 		${0:${VISUAL}}
-	\end{Pthm}
+	\end{proposition}
 
 snippet thrm "Theorem" bi
 	\begin{theorem} \label{${1:label}}
@@ -307,8 +307,8 @@ snippet thrm "Theorem" bi
 	\end{theorem}
 
 snippet prf "Proof" bi
-	\begin{quote} 
-		\textit{Proof:} ${0:${VISUAL}}
+	\begin{quote}
+		\textit{Proof.} ${0:${VISUAL}}
 	\end{quote}
 
 snippet def "Definition" bi
@@ -335,25 +335,31 @@ snippet boxed "Box" bi
 	\boxed{${1}}${0}
 
 snippet => "Implies" Ai
-	\implies
+	\implies $0
 
 snippet -> "Right Arrow" Ai
-	\rightarrow
+	\rightarrow $0
+
+snippet <= "<=" Ai
+	\le $0
+
+snippet >= ">=" Ai
+	\ge $0
 
 snippet && "And" Ai
-	\land
+	\land $0
 
 snippet || "Or" Ai
-	\lor
+	\lor $0
 
 snippet ! "Not" Ai
-	\lnot
+	\lnot $0
 
 snippet fa "For All" Ai
-	\forall
+	\forall $0
 
 snippet te "There Exists" Ai
-	\exists
+	\exists $0
 
 snippet mk "Maths" wA
 	$${1}$${2}
@@ -381,23 +387,11 @@ snippet () "left( right)" iA
 snippet lr "left( right)" i
 	\left( ${1:${VISUAL}} \right) $0
 
-snippet lr( "left( right)" i
-	\left( ${1:${VISUAL}} \right) $0
-
-snippet lr| "left| right|" i
-	\left| ${1:${VISUAL}} \right| $0
-
-snippet lr{ "left\{ right\}" i
-	\left\\{ ${1:${VISUAL}} \right\\} $0
-
 snippet lrb "left\{ right\}" i
 	\left\\{ ${1:${VISUAL}} \right\\} $0
 
-snippet lr[ "left[ right]" i
-	\left[ ${1:${VISUAL}} \right] $0
-
 snippet lra "leftangle rightangle" iA
-	\left<${1:${VISUAL}} \right>$0
+	\left<${1:${VISUAL}} \right> $0
 
 
 snippet sum "sum" w
@@ -422,16 +416,19 @@ snippet sq "\sqrt{}" iA
 	\sqrt{${1:${VISUAL}}} $0
 
 snippet sr "^2" iA
-	^2
+	^2 $0
 
 snippet cb "^3" iA
-	^3
+	^3 $0
+
+snippet ^ "^{}" iA
+	^{$1}$0
 
 snippet dot "Dot" iA
-	\cdot 
+	\cdot $0 
 
 snippet ... "Ellipse" iA
-	\ldots
+	\ldots $0
 
 snippet choose "Combinations"
 	\begin{pmatrix} $1 \\\\ $2 \end{pmatrix} $0
@@ -444,3 +441,7 @@ snippet sint "Surface Integral"
 
 snippet vec "Vector"
 	\vec{$1} $0
+
+snippet abs "Absolute Value"
+	|$1| $0
+

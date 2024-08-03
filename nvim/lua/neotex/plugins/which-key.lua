@@ -296,6 +296,10 @@ return {
         m = {
           "<cmd>read ~/.config/nvim/templates/MultipleAnswer.tex<CR>",
           "MultipleAnswer.tex",
+        },      
+        w = {
+          "<cmd>read ~/.config/nvim/templates/General.tex<CR>",
+          "General.tex",
         },
       },
     },

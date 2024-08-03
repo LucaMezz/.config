@@ -27,3 +27,5 @@ require("lazy").setup({
     notify = false,
   },
 })
+
+vim.cmd('autocmd FileType tex let g:delimitMate_autoinsert = 0')
